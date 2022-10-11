@@ -4,11 +4,11 @@ import Button from "./Button"
 
 
 
-export default function ShowFullCard({ card, count, style, icon, changeStatus, onShowCard }) {
+export default function ShowFullCard({ card, count, style, icon, onChangeStatus, onShowFullCard }) {
     return (
         <div className="full-card ">
             <div className="card-item">
-                <button className="btn clickable" onClick={onShowCard}>
+                <button className="btn clickable" onClick={onShowFullCard}>
                     <TiChevronLeft />
                 </button>
                 Question № {count}
@@ -18,9 +18,9 @@ export default function ShowFullCard({ card, count, style, icon, changeStatus, o
                 <span className={style}>{icon}</span>
             </div>
             <div className="card-item ">
-                <Button status={0} changeStatus={changeStatus} />
-                <Button status={1} changeStatus={changeStatus} />
-                <Button status={2} changeStatus={changeStatus} />
+                <Button status={0} changeStatus={onChangeStatus} />
+                <Button status={1} changeStatus={onChangeStatus} />
+                <Button status={2} changeStatus={onChangeStatus} />
             </div>
         </div>
     );

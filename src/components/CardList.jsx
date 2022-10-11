@@ -1,16 +1,22 @@
-import React from "react";
-import Form from "./Form";
-import Card from "./Card";
+import React from "react"
+import Card from "./Card"
+import CardHeader from "./CardHeader"
 
 
 
-export default function CardList({ cards }) {
+export default function CardList({ cards, onchangeCards}) {
 
     return (
         <div className="card-flex">
-            <Form cards={cards} />
+            <CardHeader cards={cards} />
             {cards.map((card, i) => (
-                <Card card={card} count={i + 1} key={i} cards={cards} />
+                <Card
+                    card={card}
+                    count={i + 1}
+                    key={i}
+                    cards={cards}
+                    onchangeCards={onchangeCards}
+                />
             ))}
         </div>
     );

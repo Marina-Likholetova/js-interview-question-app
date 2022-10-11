@@ -39,9 +39,19 @@ body {
   max-width: 50em;
   box-shadow: 3px 3px 20px var(--shadow);
   height: 100vh;
-
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.points {
+  display: flex;
+  column-gap: 5px;
+  margin-right: 5px;
+  color: var(--border-line);
+}
 .card {
   display: grid;
   grid-template-columns: 2em auto 2em;

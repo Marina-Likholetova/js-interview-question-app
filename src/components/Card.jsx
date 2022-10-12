@@ -5,27 +5,26 @@ import ShowFullCard from "./ShowFullCard"
 
 
 
-export default function Card({ card, count, cards, onchangeCards}) {
+export default function Card({ card, cards, count, onchangeCards}) {
     const [status, setStatus] = useState(card.status);
     const [FullCard, setFullCard] = useState(false);
 
 
-    function onChangeStatus(status) {
+    const onChangeStatus = (status) => {
         setStatus(status);
-    
-        const updateCard = cards.find((item) => item.id === card.id);
-        if (updateCard) updateCard.status = status;
-        
-        onchangeCards(cards);
+        onchangeCards(() => {
+            return cards.map((item) => (item.id === card.id) ? { ...item, status } : item);
+        });
     }
 
 
-    function onShowFullCard(e) {
+    const onShowFullCard = (e) => {
         if (e.target.closest(".clickable")) {
             setFullCard(!FullCard);
         }
     }
 
+    
     return (
         <div className={"card " + status_map[status]["style"]} onClick={onShowFullCard}>
             <span className="card-item clickable">{count}</span>

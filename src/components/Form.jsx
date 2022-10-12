@@ -4,22 +4,23 @@ import { useState } from "react"
 
 
 
-export default function Form({ cards }) {
+export default function Form({ cards, onchangeCards }) {
     const [newQuestion, setNewQuestion] = useState("");
 
     const onChangeInput = (e) => {
-        setNewQuestion(e.target.value);
+        setNewQuestion(e.target.value.trim());
     };
 
-    const addQuestion = (e) => {
+    const addQuestion = () => {
         if (newQuestion) {
-            cards.push({
-                id: cards.length + 1,
-                question: newQuestion,
-                url: "",
-                status: 0,
+            onchangeCards(() => {
+                return [...cards, {
+                    id: cards.length + 1,
+                    question: newQuestion,
+                    url: "",
+                    status: 0,
+                }]
             });
-            localStorage.setItem("data", JSON.stringify(cards));
         }
     };
 

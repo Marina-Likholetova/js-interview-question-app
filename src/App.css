@@ -34,14 +34,18 @@ body {
 .wrapper {
   padding: 0 15px;
   margin: 0 auto;
-  margin-top: 20px;
   position: relative;
   max-width: 50em;
   box-shadow: 3px 3px 20px var(--shadow);
-  height: 100vh;
 }
 
-.header {
+@media (min-width: 768px) {
+  .wrapper {
+    margin-top: 20px;
+  }
+}
+
+.top {
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
@@ -61,6 +65,7 @@ body {
   padding: 10px 5px;
   transition: var(--main-transition);
 }
+
 
 .card:hover {
   color: #b6c2f9;

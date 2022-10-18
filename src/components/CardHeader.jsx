@@ -9,7 +9,7 @@ export default function CardHeader({ cards, onchangeCards }) {
     
 
     return (
-        <div className="header">
+        <div className="top">
             <Form cards={cards} onchangeCards={onchangeCards}/>
             <div className="points">
                 <span className={totalResolved ? "resolved" : ""}>{totalResolved}</span>/

@@ -1,3 +1,4 @@
+import React from "react"
 import "./App.css"
 import data from "./data/db"
 import CardList from "./components/CardList"

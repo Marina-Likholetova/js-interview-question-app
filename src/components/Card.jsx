@@ -18,7 +18,7 @@ export default function Card({ card, cards, count, onchangeCards}) {
     }
 
 
-    const onShowFullCard = (e) => {
+    function onShowFullCard(e) {
         if (e.target.closest(".clickable")) {
             setFullCard(!FullCard);
         }
